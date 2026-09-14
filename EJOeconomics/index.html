@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJOeconomics — Data. Insights. Uzbekistan.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION WITH UNIVERSAL DROPDOWNS -->
+    <nav class="main-nav">
+        <div class="logo-group">
+            <div class="logo-text">
+                <span class="logo-title">EJOeconomics</span>
+                <span class="logo-tagline" data-i18n="logoTagline">Data. Insights. Uzbekistan.</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+           <div class="nav-links">
+    <a href="#economy" data-i18n="navEconomy">ECONOMY</a>
+
+    <a href="#resources" data-i18n="navResources">RESOURCES</a>
+
+    <a href="#about" data-i18n="navAbout">ABOUT</a>
+</div>
+        <div class="nav-actions">
+            <!-- LANGUAGE SWITCHER DROPDOWN -->
+            <div class="lang-selector-container">
+                <select id="languageSelect" class="lang-dropdown" onchange="changeLanguage(this.value)" aria-label="Select Language">
+                    <option value="en" selected>EN</option>
+                    <option value="uz">UZ</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
+
+    </nav>
+
+    <!-- REAL-TIME ECONOMIC TICKER BAR -->
+    <div class="ticker-bar">
+        <div class="ticker-label" data-i18n="keyMetrics">KEY METRICS</div>
+        <div class="ticker-content">
+            <span class="ticker-item"><strong>USD / UZS:</strong> <span id="usd-rate">Loading...</span> <span id="usd-change" class="neutral">━</span></span>
+            <span class="ticker-item"><strong data-i18n="tickerKeyRate">KEY RATE:</strong> 13.5% <span class="neutral" data-i18n="unchanged">━ UNCHANGED</span></span>
+            <span class="ticker-item"><strong data-i18n="tickerInflation">ANNUAL INFLATION:</strong> 8.8% <span class="down">▼ -0.2%</span></span>
+            <span class="ticker-item"><strong data-i18n="tickerGdp">GDP GROWTH:</strong> +6.0% <span class="up" data-i18n="est">▲ EST.</span></span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="breadcrumb">
+                <span data-i18n="navEconomy">ECONOMY</span> <span>/</span> UZBEKISTAN <span>/</span> <span data-i18n="navData">DATA</span>
+            </div>
+            <h1 data-i18n="heroTitle">Insights for a<br>Stronger Tomorrow</h1>
+            <p class="hero-description" data-i18n="heroDesc">
+                EJOeconomics provides reliable data, in-depth analysis,
+                and clear insights into Uzbekistan's economy — from
+                macroeconomic trends to regional development.
+            </p>
+            <a href="#data" class="hero-button">
+                <span data-i18n="exploreData">EXPLORE THE DATA</span> <span>✥ →</span>
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="samarkandwithflag.png" alt="Samarkand Registan, Uzbekistan">
+        </div>
+    </section>
+
+    <!-- TOPIC BAR -->
+    <section class="topic-bar">
+        <a href="#gdp">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span data-i18n="topicGdp">GDP</span>
+        </a>
+        <a href="#inflation">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span data-i18n="topicInflation">INFLATION</span>
+        </a>
+        <a href="#trade">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M2 20h20"></path>
+                <path d="M5 20l1.5-11h11L19 20"></path>
+                <path d="M12 4v5"></path>
+            </svg>
+            <span data-i18n="topicTrade">TRADE</span>
+        </a>
+        <a href="#employment">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span data-i18n="topicEmployment">EMPLOYMENT</span>
+        </a>
+        <a href="#population">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span data-i18n="topicPopulation">POPULATION</span>
+        </a>
+        <a href="regions.html">
+            <svg class="topic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+            </svg>
+            <span data-i18n="topicRegional">REGIONAL ECONOMY</span>
+        </a>
+    </section>
+
+    <!-- FEATURED SECTION -->
+    <section class="featured" id="featured">
+        <div class="featured-header">
+            <span class="featured-label" data-i18n="labelFeatured">— FEATURED</span>
+            <a href="#data" data-i18n="viewAllData">VIEW ALL DATA →</a>
+        </div>
+
+        <div class="featured-grid">
+            <article class="featured-main">
+                <div class="card-image">
+                    <img src="gdp.jpg" alt="Tashkent Skyline">
+                </div>
+                <div class="card-body">
+                    <span class="category-tag" data-i18n="navEconomy">ECONOMY</span>
+                    <h2 data-i18n="feat1Title">Uzbekistan's GDP<br>Growth in 2024</h2>
+                    <p data-i18n="feat1Desc">A closer look at the key drivers behind Uzbekistan's economic growth and what they mean for the future.</p>
+                    <a href="#" class="read-more" data-i18n="readMore">READ MORE →</a>
+                </div>
+            </article>
+
+            <article class="featured-card">
+                <div class="card-image">
+                    <img src="transport.jpg" alt="Registan Blue Domes">
+                </div>
+                <div class="card-body">
+                    <span class="category-tag" data-i18n="topicTrade">TRADE</span>
+                    <h3 data-i18n="feat2Title">Uzbekistan's Foreign Trade Trends in 2024</h3>
+                    <a href="#" class="read-more" data-i18n="readMore">READ MORE →</a>
+                </div>
+            </article>
+
+            <article class="featured-card">
+                <div class="card-image">
+                    <img src="cotton.jpg" alt="Cotton Fields">
+                </div>
+                <div class="card-body">
+                    <span class="category-tag" data-i18n="tagAgri">AGRICULTURE</span>
+                    <h3 data-i18n="feat3Title">The Role of Agriculture in Uzbekistan's Economy</h3>
+                    <a href="#" class="read-more" data-i18n="readMore">READ MORE →</a>
+                </div>
+            </article>
+
+            <article class="featured-card">
+                <div class="card-image">
+                    <img src="regional.jpg" alt="Modern Tashkent City">
+                </div>
+                <div class="card-body">
+                    <span class="category-tag" data-i18n="topicRegional">REGIONAL ECONOMY</span>
+                    <h3 data-i18n="feat4Title">Economic Development Across Regions</h3>
+                    <a href="regions.html" class="read-more" data-i18n="readMore">READ MORE →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- DATA SECTION WITH BURGUNDY CARDS -->
+
+
+           <!-- MACRO SUMMARY -->
+<div class="table-subcard">
+
+    <h3 data-i18n="tableHeader">
+        Makroiqtisodiy ko'rsatkichlar xulosasi
+    </h3>
+
+    <div class="table-responsive">
+
+        <table class="data-table">
+
+            <thead>
+                <tr>
+                    <th data-i18n="thIndicator">Ko'rsatkich</th>
+                    <th data-i18n="thPeriod">Davr</th>
+                    <th data-i18n="thLatest">So'nggi ko'rsatkich</th>
+                    <th data-i18n="thPrevious">Oldingi</th>
+                    <th data-i18n="thTrend">Tendimsiya</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong data-i18n="row1Name">Haqiqiy YaIM o'sishi</strong></td>
+                    <td>Annual 2025</td>
+                    <td>6.5%</td>
+                    <td>6.3%</td>
+                    <td class="trend-up" data-i18n="trendRising">▲ O'smoqda</td>
+                </tr>
+
+                <tr>
+                    <td><strong data-i18n="row2Name">Iste'mol inflyatsiyasi (CPI)</strong></td>
+                    <td>YoY 2025</td>
+                    <td>8.8%</td>
+                    <td>9.0%</td>
+                    <td class="trend-down" data-i18n="trendModerating">▼ Sekinlashmoqda</td>
+                </tr>
+
+                <tr>
+                    <td><strong data-i18n="row3Name">MB Asosiy stavkasi</strong></td>
+                    <td data-i18n="periodCurrent">Hozirgi</td>
+                    <td>13.5%</td>
+                    <td>14.0%</td>
+                    <td class="trend-down" data-i18n="trendCut">▼ Pasaytirildi</td>
+                </tr>
+
+                <tr>
+                    <td><strong data-i18n="row4Name">Savdo balansi</strong></td>
+                    <td>Q4 2025</td>
+                    <td>-$1.2B</td>
+                    <td>-$1.4B</td>
+                    <td class="trend-up" data-i18n="trendNarrowing">▲ Qisqarmoqda</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- ================= RESOURCES ================= -->
+<section class="resources-section-card">
+
+    <div class="resources-header">
+
+        <span class="section-eyebrow" data-i18n="resourcesEyebrow">
+            RESOURCES
+        </span>
+
+        <h2 data-i18n="resourcesHeader">
+            Ma'lumotlarni yuklab olish va rasmiy resurslar
+        </h2>
+
+        <p data-i18n="resourcesSubheader">
+            Birlamchi statistik ma'lumotlar va institutsional
+            bazalarga to'g'ridan-to'g'ri kirish
+        </p>
+
+    </div>
+
+
+    <div class="resources-grid">
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                ↓
+            </div>
+
+            <h3 data-i18n="res1Title">
+                Tarixiy makro seriyalar (.CSV)
+            </h3>
+
+            <a href="#" class="resource-link" data-i18n="downloadDataset">
+                YUKLAB OLISH ⤓
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                ↗
+            </div>
+
+            <h3 data-i18n="res2Title">
+                Markaziy bank portali
+            </h3>
+
+            <p data-i18n="res2Desc">
+                Rasmiy statistik nashrlar, asosiy siyosat stavkalari
+                va valyuta zaxiralariga to'g'ridan-to'g'ri havolalar.
+            </p>
+
+            <a href="https://cbu.uz"
+               target="_blank"
+               class="resource-link">
+                VISIT CBU.UZ ↗
+            </a>
+
+        </article>
+
+
+        <article class="resource-card">
+
+            <div class="resource-icon">
+                ↗
+            </div>
+
+            <h3 data-i18n="res3Title">
+                Statistika agentligi portali
+            </h3>
+
+            <p data-i18n="res3Desc">
+                Demografik, hududiy va tarmoqlar bo'yicha
+                rasmiy davlat statistik byulletenlari ombori.
+            </p>
+
+            <a href="https://stat.uz"
+               target="_blank"
+               class="resource-link">
+                VISIT STAT.UZ ↗
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+    <!-- RESOURCES SECTION WITH MATCHING BURGUNDY CARDS -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="resourcesHeader">Data Downloads & Official Resources</h2>
+                <p data-i18n="resourcesSubheader">Direct access to primary statistics and institutional databases</p>
+            </div>
+            <div class="resources-grid">
+                <div class="burgundy-card resource-card">
+                    <h4 data-i18n="res1Title">Historical Macro Series (.CSV)</h4>
+                    <p data-i18n="res1Desc">Clean datasets covering Uzbekistan GDP, inflation, and trade balances from 2015 to present.</p>
+                    <a href="#" class="download-link" data-i18n="downloadDataset">DOWNLOAD DATASET ⤓</a>
+                </div>
+                <div class="burgundy-card resource-card">
+                    <h4 data-i18n="res2Title">Central Bank Portals</h4>
+                    <p data-i18n="res2Desc">Direct links to official statistical releases, key policy rates, and foreign exchange reserves.</p>
+                    <a href="https://cbu.uz" target="_blank" class="download-link">VISIT CBU.UZ ↗</a>
+                </div>
+                <div class="burgundy-card resource-card">
+                    <h4 data-i18n="res3Title">Statistics Agency Portal</h4>
+                    <p data-i18n="res3Desc">Official state repository for demographic, regional, and sector-by-sector statistical bulletins.</p>
+                    <a href="https://stat.uz" target="_blank" class="download-link">VISIT STAT.UZ ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="burgundy-card about-card">
+                <h2 data-i18n="aboutHeader">About EJOeconomics</h2>
+               <p data-i18n="aboutBody">
+    EJOeconomics is an independent educational project created by a 16-year-old high-school student with an interest in economics and data analysis.
+
+    The website is created for educational and informational purposes. The author does not claim to be a professional economist, financial adviser, researcher, or government institution. The analysis and commentary presented on this website represent the author's own interpretation and should not be considered professional financial, economic, investment, or policy advice.
+
+    Every effort is made to use reliable and publicly available data from official and reputable sources. However, the information presented may contain errors, omissions, or interpretations that differ from those of professional economists or institutions. Visitors are encouraged to consult the original sources and qualified professionals when making important decisions.
+
+    EJOeconomics is not affiliated with or officially endorsed by the Government of Uzbekistan, the Central Bank of Uzbekistan, or any other institution mentioned on the website.
+</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo-text">
+                    <span class="logo-title">EJOeconomics</span>
+                    <span class="logo-tagline" data-i18n="logoTagline">Data. Insights. Uzbekistan.</span>
+                </div>
+                <div class="footer-contact-details">
+                    <p><strong>Email:</strong> anarboyevaezoza0610@gmail.com</p>
+                    <p><strong data-i18n="locationLabel">Location:</strong> Jizzakh, Uzbekistan</p>
+                 </div>
+
+            
+            
+            <div class="footer-socials-official">
+                <span class="social-label" data-i18n="connectUs">CONNECT WITH US</span>
+                <div class="official-social-grid">
+                    <a href="#" class="social-btn-official" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn-official" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn-official" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn-official" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 EJOeconomics. All rights reserved. Anarboyeva E'zoza Laziz qizi</p>
+            <p class="footer-slogan" data-i18n="slogan">Better data. A clearer picture.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE DATA SWITCHER & MULTI-LANGUAGE SCRIPT -->
+    <script>
+    // TRANSLATIONS DICTIONARY (EN, UZ, RU)
+    const translations = {
+        en: {
+            logoTagline: "Data. Insights. Uzbekistan.",
+            navHome: "HOME",
+            navEconomy: "ECONOMY",
+            navMacro: "Macroeconomics",
+            navFiscal: "Fiscal & Monetary Policy",
+            navBanking: "Banking & Finance",
+            navTrade: "Trade & Investment",
+            navData: "DATA",
+            navGdpGrowth: "GDP & Sectoral Growth",
+            navInflationCpi: "Inflation & Price Indices",
+            navKeyRate: "Central Bank Policy Rates",
+            navFx: "Exchange Rates & FX",
+            navInsights: "INSIGHTS",
+            navBriefs: "Policy Briefs",
+            navMarket: "Market Analysis",
+            navColumns: "Expert Columns",
+            navOutlooks: "Regional Outlooks",
+            navAbout: "ABOUT",
+            navResources: "RESOURCES",
+            navDatasets: "Dataset Downloads (.CSV)",
+            navPortals: "Stat.uz & CBU Portals",
+            navBriefsAnnual: "Annual Economic Briefs",
+            searchPlaceholder: "Search...",
+            contactUs: "CONTACT US",
+            keyMetrics: "KEY METRICS",
+            tickerKeyRate: "KEY RATE:",
+            unchanged: "━ UNCHANGED",
+            tickerInflation: "ANNUAL INFLATION:",
+            tickerGdp: "GDP GROWTH:",
+            est: "▲ EST.",
+            heroTitle: "Insights for a<br>Stronger Tomorrow",
+            heroDesc: "EJOeconomics provides reliable data, in-depth analysis, and clear insights into Uzbekistan's economy — from macroeconomic trends to regional development.",
+            exploreData: "EXPLORE THE DATA",
+            topicGdp: "GDP",
+            topicInflation: "INFLATION",
+            topicTrade: "TRADE",
+            topicEmployment: "EMPLOYMENT",
+            topicPopulation: "POPULATION",
+            topicRegional: "REGIONAL ECONOMY",
+            labelFeatured: "— FEATURED",
+            viewAllData: "VIEW ALL DATA →",
+            readMore: "READ MORE →",
+            tagAgri: "AGRICULTURE",
+            feat1Title: "Uzbekistan's GDP Growth in 2024",
+            feat1Desc: "A closer look at the key drivers behind Uzbekistan's economic growth and what they mean for the future.",
+            feat2Title: "Uzbekistan's Foreign Trade Trends in 2024",
+            feat3Title: "The Role of Agriculture in Uzbekistan's Economy",
+            feat4Title: "Economic Development Across Regions",
+            dataHeader: "Economic Data & Key Indicators",
+            dataSubheader: "Historical series and macro metrics for Uzbekistan",
+            tabGdp: "GDP Growth",
+            tabInflation: "Inflation Rate",
+            tabKeyRate: "Central Bank Key Rate",
+            dataSource: "Source: Agency Statistics of Uzbekistan",
+            tableHeader: "Macroeconomic Indicators Summary",
+            thIndicator: "Indicator",
+            thPeriod: "Period",
+            thLatest: "Latest Figure",
+            thPrevious: "Previous",
+            thTrend: "Trend",
+            row1Name: "Real GDP Growth",
+            row2Name: "Consumer Inflation (CPI)",
+            row3Name: "CBU Policy Rate",
+            row4Name: "Trade Balance",
+            periodCurrent: "Current",
+            trendRising: "▲ Rising",
+            trendModerating: "▼ Moderating",
+            trendCut: "▼ Cut",
+            trendNarrowing: "▲ Narrowing",
+            insightsHeader: "Policy Briefs & Insights",
+            insightsSubheader: "Expert commentary and structural economic analysis",
+            tagMonetary: "MONETARY POLICY",
+            tagFiscal: "FISCAL REFORM",
+            brief1Title: "Inflation Targeting & FX Stability in Central Asia",
+            brief1Desc: "An evaluation of modern Central Bank operations amidst shifting global trade corridors.",
+            brief2Title: "Privatization & State-Owned Enterprise Restructuring",
+            brief2Desc: "Key outcomes from the ongoing liberalization of state assets across industrial sectors.",
+            brief3Title: "Industrial Zones & Agricultural Productivity",
+            brief3Desc: "Mapping regional output variations and infrastructure investment impact in Uzbekistan.",
+            readBrief: "READ BRIEF →",
+            resourcesHeader: "Data Downloads & Official Resources",
+            resourcesSubheader: "Direct access to primary statistics and institutional databases",
+            res1Title: "Historical Macro Series (.CSV)",
+            res1Desc: "Clean datasets covering Uzbekistan GDP, inflation, and trade balances from 2015 to present.",
+            res2Title: "Central Bank Portals",
+            res2Desc: "Direct links to official statistical releases, key policy rates, and foreign exchange reserves.",
+            res3Title: "Statistics Agency Portal",
+            res3Desc: "Official state repository for demographic, regional, and sector-by-sector statistical bulletins.",
+            downloadDataset: "DOWNLOAD DATASET ⤓",
+            aboutHeader: "About EJOeconomics",
+            aboutBody: "EJOeconomics is an independent educational project created by a 16-year-old high-school student with an interest in economics and data analysis. The website is created for educational and informational purposes. The author does not claim to be a professional economist, financial adviser, researcher, or government institution. The analysis and commentary presented on this website represent the author's own interpretation and should not be considered professional financial, economic, investment, or policy advice. Every effort is made to use reliable and publicly available data from official and reputable sources. However, the information presented may contain errors, omissions, or interpretations that differ from those of professional economists or institutions. Visitors are encouraged to consult the original sources and qualified professionals when making important decisions. EJOeconomics is not affiliated with or officially endorsed by the Government of Uzbekistan, the Central Bank of Uzbekistan, or any other institution mentioned on the website.",
+            locationLabel: "Location:",
+            emailPlaceholder: "Your email address",
+            subscribeBtn: "SUBSCRIBE",
+            connectUs: "CONNECT WITH US",
+            slogan: "Better data. A clearer picture."
+        },
+        uz: {
+            logoTagline: "Ma'lumotlar. Tahlillar. O'zbekiston.",
+            navHome: "BOSH SAHIFA",
+            navEconomy: "IQTISODIYOT",
+            navMacro: "Makroiqtisodiyot",
+            navFiscal: "Soliq va pul-kredit siyosati",
+            navBanking: "Bank va moliya",
+            navTrade: "Tashqi savdo va investitsiyalar",
+            navData: "MA'LUMOTLAR",
+            navGdpGrowth: "YaIM va tarmoqlar o'sishi",
+            navInflationCpi: "Inflyatsiya va narx indekslari",
+            navKeyRate: "Markaziy bank asosiy stavkasi",
+            navFx: "Valyuta kurslari",
+            navInsights: "TAHLILLAR",
+            navBriefs: "Siyosiy sharhlar",
+            navMarket: "Bozor tahlili",
+            navColumns: "Ekspert ustuni",
+            navOutlooks: "Hududiy sharhlar",
+            navAbout: "LOYIHA HAQIDA",
+            navResources: "RESURSLAR",
+            navDatasets: "Ma'lumotlar to'plami (.CSV)",
+            navPortals: "Stat.uz va CBU portallari",
+            navBriefsAnnual: "Yillik iqtisodiy hisobotlar",
+            searchPlaceholder: "Qidirish...",
+            contactUs: "BOG'LANISH",
+            keyMetrics: "ASOSIY KO'RSATKICHLAR",
+            tickerKeyRate: "ASOSIY STAVKA:",
+            unchanged: "━ O'ZGARASIZ",
+            tickerInflation: "YILLIK INFLYATSIYA:",
+            tickerGdp: "YAIM O'SISHI:",
+            est: "▲ TAXM.",
+            heroTitle: "Mustahkam kelajak uchun<br>aniq ma'lumotlar",
+            heroDesc: "EJOeconomics O'zbekiston iqtisodiyoti bo'yicha ishonchli ma'lumotlar, chuqur tahlillar va aniq tushunchalarni taqdim etadi.",
+            exploreData: "MA'LUMOTLARNI KO'RISH",
+            topicGdp: "YAIM",
+            topicInflation: "INFLYATSIYA",
+            topicTrade: "SAVDO",
+            topicEmployment: "BANDLIK",
+            topicPopulation: "AHOLI",
+            topicRegional: "HUDUDIY IQTISODIYOT",
+            labelFeatured: "— TAVSIYA ETILADI",
+            viewAllData: "BARCHA MA'LUMOTLAR →",
+            readMore: "BATAFSIL →",
+            tagAgri: "QISHLOQ XO'JALIGI",
+            feat1Title: "2024 yilda O'zbekistonda YaIM o'sishi",
+            feat1Desc: "O'zbekiston iqtisodiy o'sishining asosiy omillari va kelajak istiqbollari bo'yicha tahlil.",
+            feat2Title: "2024 yilda O'zbekiston tashqi savdo tendensiyalari",
+            feat3Title: "O'zbekiston iqtisodiyotida qishloq xo'jaligining o'rni",
+            feat4Title: "Hududlar bo'yicha iqtisodiy rivojlanish",
+            dataHeader: "Iqtisodiy ko'rsatkichlar va ma'lumotlar",
+            dataSubheader: "O'zbekiston bo'yicha tarixiy seriyalar va makrometrikalar",
+            tabGdp: "YaIM o'sishi",
+            tabInflation: "Inflyatsiya darajasi",
+            tabKeyRate: "MB Asosiy stavkasi",
+            dataSource: "Manba: O'zbekiston Respublikasi Statistika agentligi",
+            tableHeader: "Makroiqtisodiy ko'rsatkichlar xulosasi",
+            thIndicator: "Ko'rsatkich",
+            thPeriod: "Davr",
+            thLatest: "So'nggi ko'rsatkich",
+            thPrevious: "Oldingi",
+            thTrend: "Tendimsiya",
+            row1Name: "Haqiqiy YaIM o'sishi",
+            row2Name: "Iste'mol inflyatsiyasi (CPI)",
+            row3Name: "MB Asosiy stavkasi",
+            row4Name: "Savdo balansi",
+            periodCurrent: "Hozirgi",
+            trendRising: "▲ O'smoqda",
+            trendModerating: "▼ Sekinlashmoqda",
+            trendCut: "▼ Pasaytirildi",
+            trendNarrowing: "▲ Qisqarmoqda",
+            insightsHeader: "Tahliliy sharhlar va maqolalar",
+            insightsSubheader: "Ekspertlar sharhlari va strukturaviy iqtisodiy tahlil",
+            tagMonetary: "PUL-KREDIT SIYOSATI",
+            tagFiscal: "SOLIQ ISLOHOTLARI",
+            brief1Title: "Markaziy Osiyoda inflyatsiyani maqsadli belgilash",
+            brief1Desc: "O'zgaruvchan global savdo koridorlari sharoitida zamonaviy Markaziy bank operatsiyalarini baholash.",
+            brief2Title: "Xususiylashtirish va davlat korxonalarini qayta tashkil etish",
+            brief2Desc: "Sanoat tarmoqlarida davlat aktivlarini liberallashtirishning asosiy natijalari.",
+            brief3Title: "Sanoat zonalari va qishloq xo'jaligi undorligi",
+            brief3Desc: "O'zbekistonda hududiy mahsulot hajmi o'zgarishlari va infratuzilma investitsiyalari ta'siri.",
+            readBrief: "SHARHNI O'QISH →",
+            resourcesHeader: "Ma'lumotlarni yuklab olish va rasmiy resurslar",
+            resourcesSubheader: "Birlamchi statistik ma'lumotlar va institutsional bazalarga to'g'ridan-to'g'ri kirish",
+            res1Title: "Tarixiy makro seriyalar (.CSV)",
+            res1Desc: "2015 yildan hozirgi kungacha O'zbekiston YaIM, inflyatsiya va savdo balansini qamrab oluvchi toza ma'lumotlar.",
+            res2Title: "Markaziy bank portali",
+            res2Desc: "Rasmiy statistik nashrlar, asosiy siyosat stavkalari va valyuta zaxiralariga to'g'ridan-to'g'ri havolalar.",
+            res3Title: "Statistika agentligi portali",
+            res3Desc: "Demografik, hududiy va tarmoqlar bo'yicha rasmiy davlat statistik bbulletenlari ambori.",
+            downloadDataset: "YUKLAB OLISH ⤓",
+            aboutHeader: "EJOeconomics haqida",
+            aboutBody: "EJOeconomics — O'zbekistonning makroiqtisodiy manzarasini tahlil qilishga bag'ishlangan mustaqil, ma'lumotlarga asoslangan tahririyat platformasidir. Bizning maqsadimiz таdqiqotchilar, siyosatshunoslar va biznes mutaxassislari uchun aniq va ishonchli iqtisodiy tahlillarni taqdim etishdir.",
+            locationLabel: "Joylashuv:",
+            stayUpdated: "YANGILIKLARDAN XABARDOR BO'LING",
+            newsletterSub: "Eng so'nggi ma'lumotlar va tahlillarni pochtangizga qabul qiling.",
+            emailPlaceholder: "Sizning email manzilingiz",
+            subscribeBtn: "A'ZO BO'LISH",
+            connectUs: "BIZ BILAN BOG'LANING",
+            slogan: "Yaxshiroq ma'lumot. Aniqroq tasvir."
+        },
+        ru: {
+            logoTagline: "Данные. Аналитика. Узбекистан.",
+            navHome: "ГЛАВНАЯ",
+            navEconomy: "ЭКОНОМИКА",
+            navMacro: "Макроэкономика",
+            navFiscal: "Бюджетно-налоговая политика",
+            navBanking: "Банки и финансы",
+            navTrade: "Торговля и инвестиции",
+            navData: "ДАННЫЕ",
+            navGdpGrowth: "Рост ВВП и отраслей",
+            navInflationCpi: "Инфляция и индексы цен",
+            navKeyRate: "Ключевая ставка ЦБ",
+            navFx: "Курсы валют",
+            navInsights: "АНАЛИТИКА",
+            navBriefs: "Аналитические записки",
+            navMarket: "Анализ рынка",
+            navColumns: "Мнения экспертов",
+            navOutlooks: "Региональные обзоры",
+            navAbout: "О НАС",
+            navResources: "РЕСУРСЫ",
+            navDatasets: "Скачать данные (.CSV)",
+            navPortals: "Порталы Stat.uz и ЦБ",
+            navBriefsAnnual: "Ежегодные обзоры",
+            searchPlaceholder: "Поиск...",
+            contactUs: "КОНТАКТЫ",
+            keyMetrics: "КЛЮЧЕВЫЕ ПОКАЗАТЕЛИ",
+            tickerKeyRate: "СТАВКА ЦБ:",
+            unchanged: "━ БЕЗ ИЗМЕНЕНИЙ",
+            tickerInflation: "ИНФЛЯЦИЯ:",
+            tickerGdp: "РОСТ ВВП:",
+            est: "▲ ОЦЕНКА",
+            heroTitle: "Аналитика для<br>уверенного будущего",
+            heroDesc: "EJOeconomics предоставляет надежные данные, глубокий анализ и четкое понимание экономики Узбекистана.",
+            exploreData: "ОБЗОР ДАННЫХ",
+            topicGdp: "ВВП",
+            topicInflation: "ИНФЛЯЦИЯ",
+            topicTrade: "ТОРГОВЛЯ",
+            topicEmployment: "ЗАНЯТОСТЬ",
+            topicPopulation: "НАСЕЛЕНИЕ",
+            topicRegional: "РЕГИОНАЛЬНАЯ ЭКОНОМИКА",
+            labelFeatured: "— ИЗБРАННОЕ",
+            viewAllData: "ВСЕ ДАННЫЕ →",
+            readMore: "ПОДРОБНЕЕ →",
+            tagAgri: "СЕЛЬСКОЕ ХОЗЯЙСТВО",
+            feat1Title: "Рост ВВП Узбекистана в 2024 году",
+            feat1Desc: "Подробный обзор ключевых факторов экономического роста Узбекистана и их значения для будущего.",
+            feat2Title: "Тенденции внешней торговли Узбекистана в 2024 году",
+            feat3Title: "Роль сельского хозяйства в экономике Узбекистана",
+            feat4Title: "Экономическое развитие регионов",
+            dataHeader: "Экономические данные и показатели",
+            dataSubheader: "Исторические ряды и макроэкономические метрики Узбекистана",
+            tabGdp: "Рост ВВП",
+            tabInflation: "Уровень инфляции",
+            tabKeyRate: "Ключевая ставка ЦБ",
+            dataSource: "Источник: Агентство статистики Узбекистана",
+            tableHeader: "Сводка макроэкономических показателей",
+            thIndicator: "Показатель",
+            thPeriod: "Период",
+            thLatest: "Последнее значение",
+            thPrevious: "Предыдущее",
+            thTrend: "Тренды",
+            row1Name: "Реальный рост ВВП",
+            row2Name: "Потребительская инфляция (ИПЦ)",
+            row3Name: "Ставка ЦБ",
+            row4Name: "Торговый баланс",
+            periodCurrent: "Текущий",
+            trendRising: "▲ Рост",
+            trendModerating: "▼ Замедление",
+            trendCut: "▼ Снижение",
+            trendNarrowing: "▲ Сокращение",
+            insightsHeader: "Аналитические обзоры",
+            insightsSubheader: "Экспертные комментарии и структурный экономический анализ",
+            tagMonetary: "ДЕНЕЖНО-КРЕДИТНАЯ ПОЛИТИКА",
+            tagFiscal: "ФИСКАЛЬНАЯ РЕФОРМА",
+            brief1Title: "Таргетирование инфляции и стабильность валюты",
+            brief1Desc: "Оценка операций Центрального банка в условиях меняющихся глобальных торговых коридоров.",
+            brief2Title: "Приватизация и реструктуризация госпредприятий",
+            brief2Desc: "Ключевые результаты либерализации государственных активов в промышленных секторах.",
+            brief3Title: "Промышленные зоны и производительность сельхозсектора",
+            brief3Desc: "Анализ регионального производства и влияния инфраструктурных инвестиций.",
+            readBrief: "ЧИТАТЬ ОБЗОР →",
+            resourcesHeader: "Загрузка данных и ресурсы",
+            resourcesSubheader: "Прямой доступ к первичной статистике и институциональным базам данных",
+            res1Title: "Исторические данные (.CSV)",
+            res1Desc: "Базы данных по ВВП, инфляции и торговому балансу Узбекистана с 2015 года.",
+            res2Title: "Портал Центрального банка",
+            res2Desc: "Прямые ссылки на официальные статистические релизы, ключевые ставки и валютные резервы.",
+            res3Title: "Портал Агентства статистики",
+            res3Desc: "Официальный репозиторий демографических, региональных и отраслевых бюллетеней.",
+            downloadDataset: "СКАЧАТЬ ДАННЫЕ ⤓",
+            aboutHeader: "О проекте EJOeconomics",
+            aboutBody: "EJOeconomics — это независимая аналитическая платформа, посвященная макроэкономическому ландшафту Узбекистана. Наша миссия — предоставлять точную и надежную экономическую аналитику.",
+            locationLabel: "Локация:",
+            stayUpdated: "БУДЬТЕ В КУРСЕ",
+            newsletterSub: "Получайте свежие данные и аналитику прямо на вашу почту.",
+            emailPlaceholder: "Ваш e-mail",
+            subscribeBtn: "ПОДПИСАТЬСЯ",
+            connectUs: "СВЯЗАТЬСЯ С НАМИ",
+            slogan: "Лучше данные. Четче картина."
+        }
+    };
+
+    // CHANGE LANGUAGE FUNCTION
+    function changeLanguage(lang) {
+        localStorage.setItem('ejo_selected_lang', lang);
+
+        // Update Text Elements
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update Placeholders
+        const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+        placeholders.forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                el.placeholder = translations[lang][key];
+            }
+        });
+    }
+
+    // INITIALIZE SAVED LANGUAGE ON LOAD
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('ejo_selected_lang') || 'en';
+        const langSelect = document.getElementById('languageSelect');
+        if (langSelect) {
+            langSelect.value = savedLang;
+        }
+        changeLanguage(savedLang);
+    });
+
+    // INTERACTIVE TAB SWITCHER FOR CHARTS
+    function switchDataTab(element, metric) {
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        if (element) {
+            element.classList.add('active');
+        }
+
+        const title = document.getElementById('chart-title');
+        const container = document.getElementById('chart-container');
+
+        if (metric === 'gdp') {
+            title.textContent = 'GDP Annual Growth Rate (%)';
+            container.innerHTML = `
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 74%;" data-value="7.4%"></div><span class="bar-label">2021</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 57%;" data-value="5.7%"></div><span class="bar-label">2022</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 60%;" data-value="6.0%"></div><span class="bar-label">2023</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 63%;" data-value="6.3%"></div><span class="bar-label">2024</span></div>
+                <div class="chart-bar-group"><div class="bar active-bar" style="--bar-height: 65%;" data-value="6.5%"></div><span class="bar-label">2025</span></div>
+            `;
+        } else if (metric === 'inflation') {
+            title.textContent = 'Consumer Price Inflation (YoY %)';
+            container.innerHTML = `
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 80%;" data-value="10.0%"></div><span class="bar-label">2021</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 98%;" data-value="12.3%"></div><span class="bar-label">2022</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 70%;" data-value="8.8%"></div><span class="bar-label">2023</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 78%;" data-value="9.8%"></div><span class="bar-label">2024</span></div>
+                <div class="chart-bar-group"><div class="bar active-bar" style="--bar-height: 70%;" data-value="8.8%"></div><span class="bar-label">2025</span></div>
+            `;
+        } else if (metric === 'keyrate') {
+            title.textContent = 'Central Bank Key Interest Rate (%)';
+            container.innerHTML = `
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 93%;" data-value="14.0%"></div><span class="bar-label">2021</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 100%;" data-value="15.0%"></div><span class="bar-label">2022</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 93%;" data-value="14.0%"></div><span class="bar-label">2023</span></div>
+                <div class="chart-bar-group"><div class="bar" style="--bar-height: 90%;" data-value="13.5%"></div><span class="bar-label">2024</span></div>
+                <div class="chart-bar-group"><div class="bar active-bar" style="--bar-height: 90%;" data-value="13.5%"></div><span class="bar-label">2025</span></div>
+            `;
+        }
+    }
+    // LIVE USD / UZS EXCHANGE RATE
+async function updateUSDRate() {
+    try {
+        const response = await fetch(
+            "https://cbu.uz/en/arkhiv-kursov-valyut/json/USD/"
+        );
+
+        if (!response.ok) {
+            throw new Error("Could not load exchange rate");
+        }
+
+        const data = await response.json();
+        const usd = data[0];
+
+        const rate = parseFloat(usd.Rate);
+        const difference = parseFloat(usd.Diff);
+
+        document.getElementById("usd-rate").textContent =
+            rate.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+        const changeElement = document.getElementById("usd-change");
+
+        if (difference > 0) {
+            changeElement.textContent = "▲ +" + difference.toFixed(2);
+            changeElement.className = "up";
+        } else if (difference < 0) {
+            changeElement.textContent = "▼ " + difference.toFixed(2);
+            changeElement.className = "down";
+        } else {
+            changeElement.textContent = "━ 0.00";
+            changeElement.className = "neutral";
+        }
+
+    } catch (error) {
+        console.error("USD rate error:", error);
+        document.getElementById("usd-rate").textContent = "Unavailable";
+    }
+}
+
+updateUSDRate();
+setInterval(updateUSDRate, 5 * 60 * 1000);
+    
+</script>
+</body>
+</html><section class="bottom-resources-section">
+  <div class="bottom-resources-grid">
+    
+  </div>
+</section>
